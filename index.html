@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-character {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: float 3s ease-in-out infinite;
+        }
+        .character-body {
+            width: 60px;
+            height: 60px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            position: relative;
+        }
+        .character-arm {
+            width: 15px;
+            height: 30px;
+            background: #ff6b6b;
+            position: absolute;
+            top: 45px;
+            transform-origin: top center;
+            animation: wave 1s alternate infinite;
+        }
+        @keyframes wave {
+            from { transform: rotate(-30deg); }
+            to { transform: rotate(30deg); }
+        }
+        .left-arm { left: -5px; }
+        .right-arm { right: -5px; }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空白网页</title>
+</head>
+<body style="overflow: hidden;">
+    <div class="floating-character">
+        <div class="character-body">
+            <div class="character-arm left-arm"></div>
+            <div class="character-arm right-arm"></div>
+        </div>
+    </div>
+    <iframe
+        src="http://43.142.195.35/chatbot/4EFZQSxq1RXVRZxg"
+        style="width: 100vw; height: 100vh; min-height: 700px"
+        frameborder="0"
+        allow="microphone">
+    </iframe>
+</body>
+</html>
